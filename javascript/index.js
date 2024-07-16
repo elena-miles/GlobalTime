@@ -34,6 +34,10 @@ cityTimeZone = moment.tz.guess();
 let cityTime = moment().tz(cityTimeZone); 
 cityName = cityTimeZone.replace("_", " ").split("/")[1]; 
 let citiesElement = document.querySelector("#cities");
+//abreviate if longer than 10 characters
+if (cityName.length > 10) {
+    cityName = cityName.substring(0, 10) + "...";
+}
 citiesElement.innerHTML = `
 <div class="city">
 <div>
@@ -42,6 +46,7 @@ citiesElement.innerHTML = `
 </div>
 <div class="time">${cityTime.format("h:mm:ss")} <small>${cityTime.format("A")}</small></div>
 </div>
+<a href="index.html"> All cities</a>
 `
 }
 
