@@ -19,6 +19,18 @@ let parisTime = moment().tz("Europe/Paris");
 parisDateElement.innerHTML = parisTime.format("MMMM Do YYYY");
 parisTimeElement.innerHTML = `${parisTime.format("h:mm:ss")} <small>${parisTime.format("A")}</small>`;
 }; 
+
+
+
+//budapest
+let budapestElement =document.querySelector("#budapest"); 
+if (budapestElement){
+let budapestDateElement = budapestElement.querySelector(".date");
+let budapestTimeElement = budapestElement.querySelector(".time");
+let budapestTime = moment().tz("Europe/Budapest"); 
+budapestDateElement.innerHTML = budapestTime.format("MMMM Do YYYY");
+budapestTimeElement.innerHTML = `${budapestTime.format("h:mm:ss")} <small>${budapestTime.format("A")}</small>`;
+}
 }
 updateTime(); 
 setInterval (updateTime, 1000); 
